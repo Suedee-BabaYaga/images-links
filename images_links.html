@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Image Links</title>
+   <style>
+       .gallery {
+           display: grid;
+           grid-template-columns: repeat(3, 1fr);
+           gap: 10px;
+       }
+       .gallery img {
+           width: 100%;
+           height: auto;
+       }
+   </style>
+</head>
+<body>
+   <h1>Welcome to Image Links</h1>
+
+   <section>
+       <h2>Home</h2>
+       <p>Welcome to our website! Check out this cool <a href="https://www.example.com/tech"><img src="tech.jpg" alt="Technology Image" width="200"></a> related to technology.</p>
+   </section>
+
+   <section>
+       <h2>Gallery</h2>
+       <div class="gallery">
+           <a href="https://www.example.com/nature1"><img src="nature1.jpg" alt="Nature Image 1"></a>
+           <a href="https://www.example.com/nature2"><img src="nature2.jpg" alt="Nature Image 2"></a>
+           <a href="https://www.example.com/nature3"><img src="nature3.jpg" alt="Nature Image 3"></a>
+       </div>
+   </section>
+
+   <section>
+       <h2>Menu</h2>
+       <ul>
+           <li><a href="https://www.example.com/food1">Food Item 1</a></li>
+           <li><a href="https://www.example.com/food2">Food Item 2</a></li>
+           <li><a href="https://www.example.com/food3">Food Item 3</a></li>
+       </ul>
+   </section>
+
+   <script>
+       const menuItems = document.querySelectorAll('section:last-of-type ul li a');
+       menuItems.forEach((item, index) => {
+           const foodImage = document.createElement('img');
+           foodImage.src = `food${index + 1}.jpg`;
+           foodImage.alt = `Food Image ${index + 1}`;
+           item.appendChild(document.createElement('br'));
+           item.appendChild(foodImage);
+       });
+   </script>
+</body>
+</html>
